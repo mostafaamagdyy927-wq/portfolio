@@ -1,0 +1,140 @@
+import os
+import shutil
+
+brain_dir = r"C:\Users\NewUser\.gemini\antigravity-ide\brain\10c69cdc-8011-4867-9d8e-00dd4244101f"
+root = r"d:\PROTFLIO"
+
+images = [
+    ("profile_photo_1790341322789.jpg", "profile.jpg", "profile.png"),
+    ("used_car_model_1790341344139.jpg", "projects/used-car-model.png", "projects/used-car-model.jpg"),
+    ("project_o_assistant_1790341362880.jpg", "projects/project-o-assistant.png", "projects/project-o-assistant.jpg"),
+    ("saip_automotive_1790341405375.jpg", "projects/saip-automotive.png", "projects/saip-automotive.jpg"),
+    ("whatsapp_booking_1790341425521.jpg", "projects/whatsapp-booking.png", "projects/whatsapp-booking.jpg"),
+    ("outbound_calling_1790341441121.jpg", "projects/outbound-calling.png", "projects/outbound-calling.jpg"),
+    ("b2b_leadgen_1790341462140.jpg", "projects/b2b-leadgen.png", "projects/b2b-leadgen.jpg"),
+]
+
+for src_name, dst_path1, dst_path2 in images:
+    src_file = os.path.join(brain_dir, src_name)
+    if os.path.exists(src_file):
+        for sub in ["asset", "public/asset"]:
+            target1 = os.path.join(root, sub, dst_path1)
+            target2 = os.path.join(root, sub, dst_path2)
+            os.makedirs(os.path.dirname(target1), exist_ok=True)
+            shutil.copy2(src_file, target1)
+            shutil.copy2(src_file, target2)
+            print(f"Copied {src_name} -> {target1}")
+
+# Create an SVG mockup for smart gloves
+smart_gloves_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071326"/>
+      <stop offset="50%" stop-color="#0B1E3D"/>
+      <stop offset="100%" stop-color="#050C17"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  
+  <!-- Subtle Grid -->
+  <g opacity="0.1" stroke="#38BDF8" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+
+  <!-- Top bar -->
+  <rect x="40" y="30" width="1120" height="60" rx="12" fill="#0D2447" stroke="#1E3A8A" stroke-width="1"/>
+  <circle cx="70" cy="60" r="8" fill="#10B981" filter="url(#glow)"/>
+  <text x="95" y="66" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="20" font-weight="700">SMART GLOVE IoT — REAL-TIME SIGN RECOGNITION</text>
+  <rect x="940" y="44" width="200" height="32" rx="16" fill="#1E3A8A"/>
+  <text x="965" y="65" fill="#38BDF8" font-family="monospace" font-size="14" font-weight="600">ESP32 • 50Hz STREAM</text>
+
+  <!-- Glove Wireframe Box -->
+  <rect x="40" y="110" width="540" height="525" rx="16" fill="#0A1830" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="70" y="150" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="1">HARDWARE SENSORS &amp; TELEMETRY</text>
+
+  <!-- Glove stylized fingers and sensors -->
+  <g transform="translate(140, 200)">
+    <!-- Palm base -->
+    <path d="M70,220 C70,180 90,140 140,140 C190,140 210,180 210,220 L210,280 C210,310 190,330 140,330 C90,330 70,310 70,280 Z" fill="#0F284E" stroke="#38BDF8" stroke-width="2"/>
+    
+    <!-- Thumb -->
+    <path d="M70,230 C40,210 20,180 25,140 C28,120 45,120 55,140 C65,160 75,190 85,210" fill="none" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="35" cy="130" r="7" fill="#F59E0B" filter="url(#glow)"/>
+    
+    <!-- Index -->
+    <path d="M100,150 L100,60 C100,40 120,40 120,60 L120,150" fill="none" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="110" cy="50" r="7" fill="#10B981" filter="url(#glow)"/>
+
+    <!-- Middle -->
+    <path d="M130,145 L130,40 C130,20 150,20 150,40 L150,145" fill="none" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="140" cy="30" r="7" fill="#10B981" filter="url(#glow)"/>
+
+    <!-- Ring -->
+    <path d="M160,150 L160,65 C160,45 180,45 180,65 L180,150" fill="none" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="170" cy="55" r="7" fill="#10B981" filter="url(#glow)"/>
+
+    <!-- Pinky -->
+    <path d="M190,165 L195,95 C195,75 215,75 215,95 L205,170" fill="none" stroke="#06B6D4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="205" cy="85" r="7" fill="#10B981" filter="url(#glow)"/>
+
+    <!-- MPU6050 chip on wrist -->
+    <rect x="110" y="250" width="60" height="50" rx="6" fill="#1E3A8A" stroke="#60A5FA" stroke-width="2"/>
+    <text x="122" y="275" fill="#FFFFFF" font-family="monospace" font-size="11" font-weight="700">MPU</text>
+    <text x="120" y="290" fill="#38BDF8" font-family="monospace" font-size="10">6050</text>
+  </g>
+
+  <!-- Right side: Flask Web & Sign Translation Output -->
+  <rect x="610" y="110" width="550" height="525" rx="16" fill="#0A1830" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="640" y="150" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="1">GESTURE-TO-SPEECH TRANSLATION UI</text>
+
+  <!-- Recognized letter card -->
+  <rect x="640" y="180" width="490" height="150" rx="12" fill="#0F284E" stroke="#2563EB" stroke-width="1"/>
+  <text x="670" y="220" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="16">Recognized Alphabet Letter</text>
+  <text x="670" y="295" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="72" font-weight="900">A - Z</text>
+  <rect x="880" y="210" width="220" height="40" rx="20" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+  <text x="910" y="235" fill="#10B981" font-family="monospace" font-size="15" font-weight="700">CONFIDENCE: 98.4%</text>
+  <text x="885" y="285" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="15">Audio Output: English Speech</text>
+
+  <!-- Telemetry readings -->
+  <rect x="640" y="350" width="235" height="120" rx="12" fill="#0B1E3D" stroke="#1E3A8A" stroke-width="1"/>
+  <text x="660" y="380" fill="#94A3B8" font-family="sans-serif" font-size="13">Flex Sensors (5x)</text>
+  <text x="660" y="415" fill="#38BDF8" font-family="monospace" font-size="22" font-weight="700">0.82 | 0.94 | 0.12</text>
+  <text x="660" y="445" fill="#10B981" font-family="sans-serif" font-size="13">✓ Calibrated</text>
+
+  <rect x="895" y="350" width="235" height="120" rx="12" fill="#0B1E3D" stroke="#1E3A8A" stroke-width="1"/>
+  <text x="915" y="380" fill="#94A3B8" font-family="sans-serif" font-size="13">Gyroscope / Accel</text>
+  <text x="915" y="415" fill="#38BDF8" font-family="monospace" font-size="22" font-weight="700">X: 12° Y: -4° Z: 98°</text>
+  <text x="915" y="445" fill="#10B981" font-family="sans-serif" font-size="13">✓ 6-Axis Motion</text>
+
+  <!-- Architecture pill flow -->
+  <rect x="640" y="490" width="490" height="115" rx="12" fill="#071326" stroke="#1E3A8A" stroke-width="1"/>
+  <text x="660" y="520" fill="#94A3B8" font-family="sans-serif" font-size="13" font-weight="600">FULL STACK PIPELINE</text>
+  <text x="660" y="555" fill="#F8FAFC" font-family="monospace" font-size="14">Flex + MPU6050 → ESP32 Microcontroller → Flask Backend</text>
+  <text x="660" y="580" fill="#38BDF8" font-family="monospace" font-size="14">→ ML Classifier → Real-Time Web Display &amp; Speech</text>
+</svg>'''
+
+for p in ["asset/projects/smart-gloves.svg", "public/asset/projects/smart-gloves.svg", "asset/projects/smart-gloves.png", "public/asset/projects/smart-gloves.png"]:
+    full_path = os.path.join(root, p)
+    with open(full_path, "w", encoding="utf-8") as f:
+        f.write(smart_gloves_svg)
+
+print("Smart gloves mockups saved.")

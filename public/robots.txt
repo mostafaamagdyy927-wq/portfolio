@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mostafamagdy.dev/sitemap.xml
