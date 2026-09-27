@@ -97,7 +97,7 @@ export const portfolioData = {
       whatsapp: "https://wa.me/201159798258",
     },
     cvPath: "/asset/Mostafa_Magdy_CV.pdf",
-    avatarPath: "/asset/profile.jpg",
+    avatarPath: "/asset/profile.png",
   },
 
   stats: [

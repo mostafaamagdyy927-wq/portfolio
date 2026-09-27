@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "End-to-end data pipelines, predictive machine learning models, and autonomous AI automation systems. DEPI Cohort 5 Trainee & Helwan University Data Science graduate candidate.",
     images: [
       {
-        url: "/asset/profile.jpg",
+        url: "/asset/profile.png",
         width: 1200,
         height: 630,
         alt: "Mostafa Magdy - Data Science & AI Automation Engineer",
