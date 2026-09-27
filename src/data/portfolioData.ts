@@ -91,9 +91,9 @@ export const portfolioData = {
     ],
     social: {
       github: "https://github.com/mostafaamagdyy927-wq",
-      linkedin: "https://linkedin.com/in/mostafa-magdy",
-      khamsat: "https://khamsat.com/user/mostafa_magdy_ai",
-      mostaql: "https://mostaql.com/u/mostafa_magdy_ai",
+      linkedin: "https://linkedin.com/in/mostafa-ghoneim1",
+      khamsat: "https://khamsat.com/user/samara0",
+      mostaql: "https://mostaql.com/u/Mostafa_Magdy03",
       whatsapp: "https://wa.me/201159798258",
     },
     cvPath: "/asset/Mostafa_Magdy_CV.pdf",
